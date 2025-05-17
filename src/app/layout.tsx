@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Fonts */}
         <link
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           defer
         ></script>
       </head>
-      <body className={`font-sans bg-gray-50 min-h-screen`}>{children}</body>
+      <body className="font-sans bg-gray-50 min-h-screen">{children}</body>
     </html>
   );
 }
