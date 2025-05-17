@@ -1,13 +1,6 @@
 // src/app/layout.tsx
 import "./globals.css";
 import { ReactNode } from "react";
-import { Pacifico } from "next/font/google";
-
-const pacifico = Pacifico({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata = {
   title: "E-commerce Dashboard",
@@ -19,7 +12,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         {/* Google Fonts */}
-       
+        <link
+          href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+          rel="stylesheet"
+        />
         {/* Remix Icon */}
         <link
           rel="stylesheet"
@@ -31,11 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           defer
         ></script>
       </head>
-      <body
-        className={`${pacifico.className} font-sans bg-gray-50 min-h-screen`}
-      >
-        {children}
-      </body>
+      <body className={`font-sans bg-gray-50 min-h-screen`}>{children}</body>
     </html>
   );
 }
